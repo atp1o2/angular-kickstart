@@ -2,13 +2,25 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'ui.router',
+  'myApp.home',
+  'myApp.about'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  // $urlRouterProvider.otherwise("/view1");
+
+  $stateProvider
+    .state('home', {
+      url: "/home",
+      templateUrl: 'app/templates/views/home.html',
+      controller: 'homeCtrl'
+    })
+
+    .state('about', {
+      url: "/about",
+      templateUrl: 'app/templates/views/about.html',
+      controller: 'aboutCtrl'
+    })
+
 }]);
