@@ -3,23 +3,24 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'myApp.home',
+  'myApp.about'
 ]).
 
 config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   // $urlRouterProvider.otherwise("/view1");
 
   $stateProvider
-    .state('view1', {
-      url: "/view1",
-      templateUrl: 'app/view1/view1.html'
+    .state('home', {
+      url: "/home",
+      templateUrl: 'app/templates/views/home.html',
+      controller: 'homeCtrl'
     })
 
-    .state('view2', {
-      url: "/view2",
-      templateUrl: 'app/view2/view2.html'
+    .state('about', {
+      url: "/about",
+      templateUrl: 'app/templates/views/about.html',
+      controller: 'aboutCtrl'
     })
 
 }]);

@@ -9,22 +9,21 @@
 </head>
 <body>
     <ul class="menu">
-    <li><a ui-sref="view1">view1</a></li>
-    <li><a ui-sref="view2">view2</a></li>
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="about">About</a></li>
   </ul>
 
   <div ui-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
-
+  <!-- Angular Scripts -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app/app.js"></script>
-  <script src="app/view1/view1.js"></script>
-  <script src="app/view2/view2.js"></script>
-  <script src="app/components/version/version.js"></script>
-  <script src="app/components/version/version-directive.js"></script>
-  <script src="app/components/version/interpolate-filter.js"></script>
+  <script src="app/controllers/home-ctrl.js"></script>
+  <script src="app/controllers/about-ctrl.js"></script>
+
+  <script src="app/directives/version-directive.js"></script>
+  <script src="app/filters/interpolate-filter.js"></script>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
